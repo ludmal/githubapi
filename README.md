@@ -11,3 +11,8 @@
 * Parrell calls usage
 * Async/await usage
 * Unit Tests
+
+Local Tests
+=============
+
+![image](https://user-images.githubusercontent.com/130307/218429747-f0ee3a73-e990-480c-bbcb-0ee94bc29bd7.png)
