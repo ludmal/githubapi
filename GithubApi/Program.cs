@@ -14,7 +14,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddHttpClient<IUserService, GithubUserService>(c =>
 {
     c.BaseAddress = new Uri(builder.Configuration.GetValue<string>("GithubApiConfiguration:Url") ?? throw new Exception("Unable to find Github configuration"));
-    c.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", builder.Configuration.GetValue<string>("GithubApiConfiguration:Token"));
     c.DefaultRequestHeaders.Add("User-Agent","request");
 }).AddPolicyHandler(GetRetryPolicy());
 

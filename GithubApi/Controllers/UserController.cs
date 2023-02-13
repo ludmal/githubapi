@@ -19,6 +19,7 @@ public class UserController : ControllerBase
     private readonly IMediator _mediator;
 
     //Good practise to keep the thin controllers. We don't need logging here since we can use UseRequestLogging middleware built in.
+    //Also would have been GET request easily. but for the sake of this example, I like to keep it as a post
     [HttpPost(Name = "retrieveUsers")]
     public async Task<IActionResult> Post(GetUserRequest request) => this.Ok(await _mediator.Send(request));
 }

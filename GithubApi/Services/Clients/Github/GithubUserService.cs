@@ -25,8 +25,9 @@ public class GithubUserService : IUserService
          {
              try
              {
-                 var result = await _client.GetAsync($"users/{user}", cancellationToken);
                  _logger.LogInformation("Requesting data for user: {@User}", user);
+                 var result = await _client.GetAsync($"users/{user}", cancellationToken);
+                 _logger.LogInformation("Received data for user: {@User} result:{@Result}", user, result);
                  
                  if(result.IsSuccessStatusCode) 
                      userList.Add(_mapper.Map<UserDetailsModel>(JsonConvert.DeserializeObject<GitUserDetailsModel>(await result.Content.ReadAsStringAsync())));
