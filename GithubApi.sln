@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GithubApi", "GithubApi\GithubApi.csproj", "{22924259-C926-4EA0-83AB-4F261AFAB53D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GithubApi.Tests", "GithubApi.Tests\GithubApi.Tests.csproj", "{837AF0C5-E0BE-4331-9C2F-5DA66E28AB7C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22924259-C926-4EA0-83AB-4F261AFAB53D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22924259-C926-4EA0-83AB-4F261AFAB53D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22924259-C926-4EA0-83AB-4F261AFAB53D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22924259-C926-4EA0-83AB-4F261AFAB53D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{837AF0C5-E0BE-4331-9C2F-5DA66E28AB7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{837AF0C5-E0BE-4331-9C2F-5DA66E28AB7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{837AF0C5-E0BE-4331-9C2F-5DA66E28AB7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{837AF0C5-E0BE-4331-9C2F-5DA66E28AB7C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
