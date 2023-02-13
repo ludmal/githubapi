@@ -19,14 +19,10 @@ builder.Services.AddHttpClient<IUserService, GithubUserService>(c =>
 }).AddPolicyHandler(GetRetryPolicy());
 
 //We add a retry policy for transient errors also can be extend to add circuit breaker etc. 
-static IAsyncPolicy<HttpResponseMessage> GetRetryPolicy()
-{
-    return HttpPolicyExtensions
-        .HandleTransientHttpError()
-        .OrResult(msg => msg.StatusCode == System.Net.HttpStatusCode.InternalServerError)
-        .WaitAndRetryAsync(6, retryAttempt => TimeSpan.FromSeconds(Math.Pow(2,
-            retryAttempt)));
-}
+static IAsyncPolicy<HttpResponseMessage> GetRetryPolicy() => HttpPolicyExtensions
+    .HandleTransientHttpError()
+    .OrResult(msg => msg.StatusCode == System.Net.HttpStatusCode.InternalServerError)
+    .WaitAndRetryAsync(6, retryAttempt => TimeSpan.FromSeconds(Math.Pow(2, retryAttempt)));
 
 builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
@@ -41,6 +37,8 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    //We can log request/response HttpContext here only in dev.
+    app.UseHttpLogging();
 }
 
 app.UseHttpsRedirection();

@@ -7,6 +7,7 @@ using Xunit;
 
 namespace GithubApi.Tests;
 
+//TODO: We need more Unit test here but was lazy. :D
 public class HandlerTests
 {
     private readonly IMapper _mapper;

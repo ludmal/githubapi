@@ -9,6 +9,7 @@ using Xunit;
 
 namespace GithubApi.Tests;
 
+//TODO: We need more unit tests here but was lazy. 
 public class UserServiceTests
 {
     private readonly IMapper _mapper;
